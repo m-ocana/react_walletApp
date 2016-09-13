@@ -1,0 +1,7 @@
+.app-container div > div.container {
+  width: 400px;
+}
+
+button.btn-danger {
+  z-index: 3 !important;
+}
