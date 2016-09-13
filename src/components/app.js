@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from './header';
 import Balance from './balance';
-import Transaction from './transaction';
-import TransactionList from './transaction_list';
+import TransactionControl from './transaction_control';
+import TransactionList from '../containers/transaction_list';
 
 const LOCALE = "en";
 
@@ -13,7 +13,7 @@ export default class App extends Component {
         <Header />
         <div className="container">
           <Balance />
-          <Transaction />
+          <TransactionControl />
           <TransactionList />
         </div>
       </div>
