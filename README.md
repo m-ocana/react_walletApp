@@ -1,5 +1,5 @@
 # Wallet App built in React with Redux
-Minimal wallet app built in React Redux to simulate transactions.
+Minimal wallet app built in React Redux to simulate transactions. [STILL IN PROGRESS]
 
 
 ## Installation
