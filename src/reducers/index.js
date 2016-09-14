@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import TransactionReducer from './reducer_transaction';
+import BalanceReducer from './reducer_balance';
+import TransactionsReducer from './reducer_transactions';
 
 const rootReducer = combineReducers({
-  transactions: TransactionReducer
+  currentBalance: BalanceReducer,
+  transactions: TransactionsReducer
 });
 
 export default rootReducer;

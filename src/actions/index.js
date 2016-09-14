@@ -3,15 +3,13 @@ export const IN = "IN";
 export const OUT = "OUT";
 
 export function addTransaction(transactionType, value) {
-  const amount = (transactionType === OUT ? value * (-1): value);
-  const date = Date.now()/1000;
-  const transaction = {
+  let amount = (transactionType === OUT ? value * (-1): value);
+  let date = Date.now()/1000;
+  let transaction = {
     amount: amount,
     date: date,
     type: transactionType
   }
-
-  console.log("going to add:",transaction);
 
   return {
     type: ADD_TRANSACTION,

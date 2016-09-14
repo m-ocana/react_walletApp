@@ -14,7 +14,7 @@ class Header extends Component {
         <Navbar.Collapse>
           <Nav>
             <NavItem eventKey={1} href="#">Reset</NavItem>
-            <NavItem eventKey={2} href="#">View Source</NavItem>
+            <NavItem eventKey={2} href="https://github.com/m-ocana/react_walletApp">View Source</NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

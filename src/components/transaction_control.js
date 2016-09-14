@@ -16,8 +16,10 @@ class TransactionControl extends Component {
   }
 
   onButtonClick(type){
-    this.props.addTransaction(type, this.state.value);
-    this.setState({value: ''});
+    if(this.state.value > 0) {
+      this.props.addTransaction(type, this.state.value);
+      this.setState({value: ''});
+    }
   }
 
   render() {
@@ -27,6 +29,7 @@ class TransactionControl extends Component {
           <InputGroup.Button>
             <Button
               bsStyle="danger"
+              disabled={Number(this.props.currentBalance) - Number(this.state.value) <= 0}
               onClick={this.onButtonClick.bind(this, OUT)}>
               Out</Button>
           </InputGroup.Button>
@@ -48,8 +51,12 @@ class TransactionControl extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return { currentBalance: state.currentBalance };
+}
+
 function mapDispatchToProps(dispatch){
   return bindActionCreators({addTransaction},dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(TransactionControl);
+export default connect(mapStateToProps, mapDispatchToProps)(TransactionControl);

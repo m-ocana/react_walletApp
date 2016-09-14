@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header';
-import Balance from './balance';
+import Balance from '../containers/balance';
 import TransactionControl from './transaction_control';
 import TransactionList from '../containers/transaction_list';
 
