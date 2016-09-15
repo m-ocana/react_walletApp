@@ -35,6 +35,8 @@
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
     "react-timestamp": "^3.0.4",
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "redux-storage": "^4.1.1",
+    "redux-storage-engine-localstorage": "^1.1.2"
   }
 }

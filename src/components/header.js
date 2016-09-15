@@ -1,5 +1,8 @@
 import React,{ Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { resetWallet } from '../actions/index';
 
 class Header extends Component {
   render() {
@@ -13,7 +16,10 @@ class Header extends Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="#">Reset</NavItem>
+            <NavItem
+              onClick = {this.props.resetWallet}
+              eventKey={1}
+              href="#">Reset</NavItem>
             <NavItem eventKey={2} href="https://github.com/m-ocana/react_walletApp">View Source</NavItem>
           </Nav>
         </Navbar.Collapse>
@@ -22,4 +28,8 @@ class Header extends Component {
   }
 }
 
-export default Header;
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({resetWallet},dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Header);

@@ -1,6 +1,7 @@
 export const ADD_TRANSACTION = "ADD_TRANSACTION";
 export const IN = "IN";
 export const OUT = "OUT";
+export const RESET = "RESET";
 
 export function addTransaction(transactionType, value) {
   let amount = (transactionType === OUT ? value * (-1): value);
@@ -14,5 +15,13 @@ export function addTransaction(transactionType, value) {
   return {
     type: ADD_TRANSACTION,
     payload: transaction
+  }
+}
+
+export function resetWallet() {
+  console.log("IN ACTION");
+  return {
+    type: RESET,
+    payload: {}
   }
 }
