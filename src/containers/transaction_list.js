@@ -10,6 +10,7 @@ class TransactionList extends Component {
   renderTransaction(transaction, index) {
     let size = this.props.transactions.length;
     return (
+      // todo: add generated keys
       <tr key={index}>
         <td>{size-index}</td>
         <td><FormattedNumber value={transaction.amount} style='currency' currency="gbp"/></td>
