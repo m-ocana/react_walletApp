@@ -19,7 +19,6 @@ export function addTransaction(transactionType, value) {
 }
 
 export function resetWallet() {
-  console.log("IN ACTION");
   return {
     type: RESET,
     payload: {}

@@ -22,6 +22,23 @@ class TransactionControl extends Component {
     }
   }
 
+  validateInput(){
+    const regexp = /^[0-9]+([,.][0-9]+)?$/g;
+    const test = regexp.test(Number(this.state.value));
+    return test;
+  }
+
+  validateCashOut(){
+    if((Number(this.props.currentBalance) - Number(this.state.value)) <= 0){
+      console.log(Number(this.props.currentBalance) - Number(this.state.value));
+      return false;
+    }
+    if(!this.validateInput()){
+      return false;
+    }
+    return true;
+  }
+
   render() {
     return (
       <FormGroup>
@@ -29,7 +46,7 @@ class TransactionControl extends Component {
           <InputGroup.Button>
             <Button
               bsStyle="danger"
-              disabled={Number(this.props.currentBalance) - Number(this.state.value) <= 0}
+              disabled={!this.validateCashOut()}
               onClick={this.onButtonClick.bind(this, OUT)}>
               Out</Button>
           </InputGroup.Button>
@@ -42,6 +59,7 @@ class TransactionControl extends Component {
           <InputGroup.Button>
             <Button
               bsStyle="success"
+              disabled={!this.validateInput()}
               onClick={this.onButtonClick.bind(this, IN)}>
               In</Button>
           </InputGroup.Button>

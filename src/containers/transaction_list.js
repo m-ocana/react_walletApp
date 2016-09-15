@@ -19,6 +19,12 @@ class TransactionList extends Component {
   }
 
   render() {
+    if(this.props.transactions.length === 0) {
+      return (
+        <p className="text-info">No transactions yet</p>
+      )
+    }
+
     return (
       <Table bordered hover>
         <thead>

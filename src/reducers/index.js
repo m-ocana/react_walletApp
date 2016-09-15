@@ -12,7 +12,6 @@ const appReducer = combineReducers({
 const rootReducer = (state, action) => {
   if(action.type === RESET) {
       state = undefined; // reassigning reference to local variable
-      localStorage.removeItem(STATE_KEY);
   }
   return appReducer(state, action)
 }

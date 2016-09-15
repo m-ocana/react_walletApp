@@ -5,7 +5,10 @@ import {FormattedNumber} from 'react-intl';
 class Balance extends Component {
   render () {
     return (
-      <h1 className="lead">Balance: <FormattedNumber value={this.props.currentBalance} style='currency' currency="gbp"/></h1>
+      <h1 className="lead">
+        <span className="text-info">Balance: </span>
+        <FormattedNumber value={this.props.currentBalance} style='currency' currency="gbp"/>
+      </h1>
     )
   }
 }
