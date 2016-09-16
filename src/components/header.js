@@ -11,7 +11,7 @@ class Header extends Component {
         <Navbar.Header>
           <Navbar.Brand>
             <a href="#">
-            <img src="/img/easter-egg.png" alt="Easter Egg" />
+            <img src="img/easter-egg.png" alt="Easter Egg" />
             WalletApp</a>
           </Navbar.Brand>
           <Navbar.Toggle />
