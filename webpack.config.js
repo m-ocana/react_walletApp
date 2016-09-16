@@ -1,26 +1,34 @@
-module.exports = {
+var webpack = require('webpack');
+var path = require('path');
+
+var BUILD_DIR = path.resolve(__dirname, 'public');
+var APP_DIR = path.resolve(__dirname, 'src');
+
+var config = {
   entry: [
-    './src/index.js'
+    'webpack-dev-server/client?http://localhost:8080/',
+    APP_DIR + '/index.js'
   ],
   output: {
-    path: __dirname,
-    publicPath: '/',
+    path: BUILD_DIR,
     filename: 'bundle.js'
   },
+  devServer: {
+    contentBase: './'
+  },
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
-      }
-    }]
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|public)/,
+        loader: 'babel'
+      },
+    ]
   },
   resolve: {
+    // make it possible to require('file') instead of require('file.jsx')
     extensions: ['', '.js', '.jsx']
   },
-  devServer: {
-    historyApiFallback: true,
-    contentBase: './'
-  }
 };
+
+module.exports = config;
