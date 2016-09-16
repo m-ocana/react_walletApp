@@ -44,7 +44,7 @@ html, body, .app-container {
 .app-container div > div.container {
   background-color: #fcfffd;
   border-radius: 4px;
-  width: 400px;
+  max-width: 600px;
   margin-top: 50px;
 }
 .text-info {
@@ -60,6 +60,12 @@ p.text-info {
 /* Media queries */
 @media (min-width: 768px) {
   .navbar {
-      border-radius: 0px;
+    border-radius: 0px;
+  }
+}
+
+@media (max-width: 760px) {
+  .app-container div > div.container {
+    max-width: 400px;
   }
 }
