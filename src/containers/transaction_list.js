@@ -11,7 +11,7 @@ class TransactionList extends Component {
     let size = this.props.transactions.length;
     return (
       // todo: add generated keys
-      <tr key={index}>
+      <tr key={transaction.id}>
         <td>{size-index}</td>
         <td><FormattedNumber value={transaction.amount} style='currency' currency="gbp"/></td>
         <td><Timestamp time={transaction.date} format="full"/></td>
@@ -22,12 +22,12 @@ class TransactionList extends Component {
   render() {
     if(this.props.transactions.length === 0) {
       return (
-        <p className="text-info">No transactions yet</p>
+        <p className="text-info">No transaction history</p>
       )
     }
 
     return (
-      <Table bordered hover>
+      <Table responsive bordered hover>
         <thead>
           <tr>
             <th>Id</th>

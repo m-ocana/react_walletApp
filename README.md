@@ -17,5 +17,4 @@ Run `npm run build` to build for production.
 
 ### TO-DOS
 * Uglify bundle.js
-* Style transaction list table
-* Show tooltips on validation fail
+* Improve webpack config

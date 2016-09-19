@@ -30,7 +30,6 @@ class TransactionControl extends Component {
 
   validateCashOut(){
     if((Number(this.props.currentBalance) - Number(this.state.value)) <= 0){
-      console.log(Number(this.props.currentBalance) - Number(this.state.value));
       return false;
     }
     if(!this.validateInput()){
@@ -41,7 +40,9 @@ class TransactionControl extends Component {
 
   render() {
     return (
-      <FormGroup>
+      <FormGroup
+        controlId="formValidation"
+        validationState={!this.validateInput() ? "error" : null}>
         <InputGroup>
           <InputGroup.Button>
             <Button
